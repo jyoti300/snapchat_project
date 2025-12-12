@@ -1,0 +1,69 @@
+ {% extends "base.html" %}
+
+{% block content %}
+
+
+    <div class="register-box">
+
+        <h2 class="text-center mb-4">Create an Account</h2>
+
+        <form action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+
+
+            <div class="mb-3">
+
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your first name">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your last name">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email ID</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Mobile Number</label>
+                <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Enter your mobile number">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" rows="2" id="address" name="address" placeholder="Enter your address"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password"placeholder="Enter password">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="password" name="password"placeholder="Re-enter password">
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+
+                <button type="submit" class="btn btn-primary w-45">
+                    Register
+                </button>
+
+                <button type="button" class="btn btn-danger w-45"
+                        onclick="location.href='home.html'">
+                    Cancel
+                </button>
+
+            </div>
+        </form>
+    </div>
+
+
+    {% endblock content %}
+
+    
+    
