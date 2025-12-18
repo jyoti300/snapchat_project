@@ -57,3 +57,17 @@ def create_invoice(request):
 
     return redirect ("viewinvoice")
     return render(request, "invoice.html")
+
+def viewinvoice(request):
+    invoices=Invoice.objects.all()
+    context={"invoice1":invoices}
+    print(invoices.first())
+
+    return render(request, "viewinvoice.html", context)
+
+def deleteinvoice(request,pk):
+    Invoice.objects.filter(id=pk).delete()
+    invoices=Invoice.objects.all()
+    context={"invoice1":invoices}
+
+    return render(request,"viewinvoice.html",context)

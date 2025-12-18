@@ -23,6 +23,9 @@ urlpatterns = [
     path("",views.home,name='home'),
     path("register/",views.register,name="register"),
     path("login/",views.login,name="login"),
-    path("invoice/",views.create_invoice,name="create_invoice")
+    path("invoice/",views.create_invoice,name="create_invoice"),
+    path("invoice.html",views.create_invoice,name="invoice.html"),
+    path("viewinvoice/",views.viewinvoice, name="viewinvoice"),
+    path("deleteinvoice/<int:pk>",views.deleteinvoice,name="deleteinvoice")
     
 ]
